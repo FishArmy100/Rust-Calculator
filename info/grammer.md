@@ -27,9 +27,9 @@
 
 - Primary = `IDENTIFIER` | `LITERAL` | Grouping | Call;
 - Exponent = Primary `CARRET` (Exponent | Primary);
-- Unary = MINUS (Exponent | Exponent);
-- Factor = Unary ((`STAR` | `SLASH`) Unary)+;
-- Term = Factor ((`PLUS` | `MINUS`) Factor)+;
+- Unary = MINUS (Unary | Exponent);
+- Factor = Unary ((`STAR` | `SLASH`) Unary)*;
+- Term = Factor ((`PLUS` | `MINUS`) Factor)*;
 - Expression = Term;
 
 - Variable = `IDENTIFIER` `EQUALS` Expression `SEMI_COLON`;
